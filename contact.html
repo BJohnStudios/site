@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact | HomeTech SA</title>
+  <meta name="description" content="Contact HomeTech SA for onsite IT support in South Australia. Book a callout or request a quote." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <div class="navbar">
+      <a class="brand" href="index.html"><img src="assets/img/logo.svg" alt="" /><span>HomeTech SA</span></a>
+      <button class="mobile-toggle" data-menu-toggle aria-label="Open menu">Menu</button>
+      <nav>
+        <ul data-menu>
+          <li><a data-nav href="index.html">Home</a></li>
+          <li><a data-nav href="services.html">Services</a></li>
+          <li><a data-nav href="pricing.html">Pricing</a></li>
+          <li><a data-nav href="about.html">About</a></li>
+          <li><a data-nav href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="btn primary small" href="contact.html">Book a Callout</a>
+    </div>
+  </div>
+</header>
+
+<main class="section">
+  <div class="container two-col">
+    <div class="card">
+      <span class="badge">📩 Contact</span>
+      <h1 style="margin:10px 0 0; font-size:38px;">Request a quote / book a callout</h1>
+      <p class="muted">Fill this out and we’ll get back to you. Add screenshots if needed (via email after).</p>
+
+      <!-- NETLIFY FORMS:
+           Works automatically when hosted on Netlify.
+           If not using Netlify, you can swap this for a mailto link.
+      -->
+      <form name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact" />
+
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" autocomplete="name" required />
+        </div>
+
+        <div>
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" autocomplete="tel" placeholder="04xx xxx xxx" />
+        </div>
+
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required />
+        </div>
+
+        <div>
+          <label for="type">Support type</label>
+          <select id="type" name="type" required>
+            <option value="">Select one</option>
+            <option>Onsite (Adelaide/SA)</option>
+            <option>Remote support</option>
+            <option>Not sure</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="message">What’s going on?</label>
+          <textarea id="message" name="message" placeholder="Example: Wi-Fi drops out at night, printer won’t connect, new PC setup, etc." required></textarea>
+        </div>
+
+        <button class="btn primary" type="submit">Send</button>
+      </form>
+
+      <p class="muted" style="margin-top:12px;">
+        Prefer email? Use: <a href="mailto:hello@hometechsa.com.au">hello@hometechsa.com.au</a> (update later)
+      </p>
+    </div>
+
+    <aside class="card">
+      <h2>Contact details</h2>
+      <ul class="list">
+        <li><strong>Service area:</strong> Adelaide metro + SA regional by arrangement</li>
+        <li><strong>Hours:</strong> Mon–Sat (flexible)</li>
+        <li><strong>Phone:</strong> 04xx xxx xxx (add later)</li>
+      </ul>
+
+      <div class="notice">
+        <strong>Hosting tip:</strong> If you host on Netlify, this form works without coding a backend.
+      </div>
+
+      <h2 style="margin-top:18px;">What to send for faster fixes</h2>
+      <ul class="list">
+        <li>Device model (router/printer/laptop)</li>
+        <li>Any error messages (photo is fine)</li>
+        <li>Internet provider (NBN/5G)</li>
+      </ul>
+    </aside>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="brand"><img src="assets/img/logo.svg" alt="" /><span>HomeTech SA</span></div>
+      <small>© <span data-year></span> HomeTech SA.</small>
+    </div>
+    <div>
+      <strong>Quick links</strong>
+      <div style="display:grid; gap:8px; margin-top:10px;">
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
