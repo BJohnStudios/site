@@ -35,45 +35,61 @@
       <h1 style="margin:10px 0 0; font-size:38px;">Request a quote / book a callout</h1>
       <p class="muted">Fill this out and we’ll get back to you. Add screenshots if needed (via email after).</p>
 
-      <!-- NETLIFY FORMS:
-           Works automatically when hosted on Netlify.
-           If not using Netlify, you can swap this for a mailto link.
-      -->
-      <form name="contact" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="contact" />
+      <form action="https://formspree.io/f/REPLACE_WITH_YOURS" method="POST" id="contactForm">
+  <div>
+    <label for="name">Name</label>
+    <input id="name" name="name" autocomplete="name" required />
+  </div>
 
-        <div>
-          <label for="name">Name</label>
-          <input id="name" name="name" autocomplete="name" required />
-        </div>
+  <div>
+    <label for="phone">Phone</label>
+    <input id="phone" name="phone" autocomplete="tel" placeholder="04xx xxx xxx" />
+  </div>
 
-        <div>
-          <label for="phone">Phone</label>
-          <input id="phone" name="phone" autocomplete="tel" placeholder="04xx xxx xxx" />
-        </div>
+  <div>
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" autocomplete="email" required />
+  </div>
 
-        <div>
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" autocomplete="email" required />
-        </div>
+  <div>
+    <label for="type">Support type</label>
+    <select id="type" name="type" required>
+      <option value="">Select one</option>
+      <option>Onsite (Adelaide/SA)</option>
+      <option>Remote support</option>
+      <option>Not sure</option>
+    </select>
+  </div>
 
-        <div>
-          <label for="type">Support type</label>
-          <select id="type" name="type" required>
-            <option value="">Select one</option>
-            <option>Onsite (Adelaide/SA)</option>
-            <option>Remote support</option>
-            <option>Not sure</option>
-          </select>
-        </div>
+  <div>
+    <label for="message">What’s going on?</label>
+    <textarea id="message" name="message" required></textarea>
+  </div>
 
-        <div>
-          <label for="message">What’s going on?</label>
-          <textarea id="message" name="message" placeholder="Example: Wi-Fi drops out at night, printer won’t connect, new PC setup, etc." required></textarea>
-        </div>
+  <!-- Helps reduce spam -->
+  <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
 
-        <button class="btn primary" type="submit">Send</button>
-      </form>
+  <!-- Nice email subject -->
+  <input type="hidden" name="_subject" value="New enquiry - HomeTech SA" />
+
+  <!-- Where to redirect after submit -->
+  <input type="hidden" name="_next" value="https://hometechsa.com.au/contact.html?sent=1" />
+
+  <button class="btn primary" type="submit">Send</button>
+
+  <p class="notice" id="sentMsg" style="display:none; margin-top:12px;">
+    ✅ Sent! We’ll get back to you ASAP.
+  </p>
+</form>
+
+<script>
+  // Show a "Sent" message after redirect (?sent=1)
+  if (new URLSearchParams(location.search).get("sent") === "1") {
+    const msg = document.getElementById("sentMsg");
+    if (msg) msg.style.display = "block";
+  }
+</script>
+
 
       <p class="muted" style="margin-top:12px;">
         Prefer email? Use: <a href="mailto:hello@hometechsa.com.au">hello@hometechsa.com.au</a> (update later)
@@ -120,3 +136,4 @@
 </footer>
 </body>
 </html>
+
